@@ -45,7 +45,7 @@ app.get('/api/users', async (req, res) => {
   res.send(users);
 });
 
-// Start the server on the specified port
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
