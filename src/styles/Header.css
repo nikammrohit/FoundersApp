@@ -18,32 +18,10 @@
   margin: 0 auto; /* Center the header */
 }
 
-.glowing-lines {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 1px; /* Add some space between the text and the lines */
-}
-
 .line {
   width: 30px;
   height: 1.5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.line.red {
-  background-color: rgb(238, 105, 94);
-  box-shadow: 0 0 10px rgb(238, 105, 94);
-}
-
-.line.yellow {
-  background-color: rgb(245, 189, 79);
-  box-shadow: 0 0 10px rgb(245, 189, 79);
-}
-
-.line.green {
-  background-color: rgb(97, 196, 84);
-  box-shadow: 0 0 10px rgb(97, 196, 84);
 }
 
 .logo a {

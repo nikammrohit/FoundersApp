@@ -1,25 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = () => {
+	const navigate = useNavigate();
+
 	return (
 		<header className="header">
 			<div className="logo">
-				<a href="#landing-page">Rohit</a>
+			<button onClick={() => navigate('/')} className="logo-button">Founders</button>
 			</div>
 			<nav className="nav">
 				<ul>
 					<li>
-						<button onClick={() => window.location.href = '#login'}>Login</button>
-						<div className="glowing-lines">
-							<a href="#projects" className="line yellow" aria-label="Projects section"></a>
-						</div>
+						<button onClick={() => navigate('/login')}>Login</button>
 					</li>
 					<li>
-						<button onClick={() => window.location.href = '#signup'}>SignUp</button>
-						<div className="glowing-lines">
-							<a href="#contact" className="line green" aria-label="Contact section"></a>
-						</div>
+						<button onClick={() => navigate('/signup')}>SignUp</button>
 					</li>
 				</ul>
 			</nav>
