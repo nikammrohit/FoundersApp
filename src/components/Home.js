@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from 'react';
 // Import the fetchUsers function from the API module
 import { fetchUsers } from '../services/api';
+import LandingPage from './LandingPage';
+import Header from './Header';
+import Footer from './Footer';
 
 // Define the Home component
 const Home = () => {
@@ -15,13 +18,10 @@ const Home = () => {
 
     // Render the list of users
     return (
-        <div>
-            <h1>Startup Founders</h1>
-            <ul>
-                {users.map((user) => (
-                    <li key={user._id}>{user.name} - {user.startup}</li>
-                ))}
-            </ul>
+        <div> 
+            <Header />
+            <LandingPage />
+            <Footer />
         </div>
     );
 };
