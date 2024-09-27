@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   startup: { type: String, required: true },
 });
 
+
 const User = mongoose.models.User || mongoose.model('User', userSchema); // Use existing model if it exists
 
 // Export the User model to be used in other parts of the application
