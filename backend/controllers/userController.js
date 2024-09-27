@@ -1,5 +1,5 @@
 // backend/controllers/userController.js
-
+// Creates and fetches users
 // Import the User model
 const User = require('../models/userModel');
 
