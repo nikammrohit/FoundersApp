@@ -14,7 +14,7 @@ const LandingPage = () => {
 		<div className="landing-about-wrapper">
 			<section id="landing-page" className="landing-page">
 				<h1>Welcome to Founders</h1>
-				<p>A place to .</p>
+				<p>Where Startup Journeys Meet.</p>
 				<button onClick={handleScroll} className="cta-button">View My Work</button>
 			</section>
 		</div>
