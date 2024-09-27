@@ -8,8 +8,7 @@ const userSchema = new mongoose.Schema({
   startup: String,
 });
 
-// Create a User model using the userSchema
-const User = mongoose.model('User', userSchema);
+const User = mongoose.models.User || mongoose.model('User', userSchema); // Use existing model if it exists
 
 // Export the User model to be used in other parts of the application
 module.exports = User;
