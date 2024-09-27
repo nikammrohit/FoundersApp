@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className="logo">
-			<button onClick={() => navigate('/')} className="logo-button">Founders</button>
+				<button onClick={() => navigate('/')} className="logo-button">Founders</button>
 			</div>
 			<nav className="nav">
 				<ul>
