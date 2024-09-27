@@ -2,7 +2,7 @@
 // Import React and necessary hooks
 import React, { useEffect, useState } from 'react';
 // Import the fetchUsers function from the API module
-import { fetchUsers } from '../api';
+import { fetchUsers } from '../services/api';
 
 // Define the Home component
 const Home = () => {
