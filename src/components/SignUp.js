@@ -1,71 +1,48 @@
+// frontend/src/components/SignUp.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/SignUp.css';
+import { useNavigate } from 'react-router-dom';
+import '../styles/SignUp.css'; // Import the CSS file for styling
 
 const SignUp = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
     try {
-      const response = await axios.post('http://localhost:5001/api/signup', {
-        username,
-        password,
-      });
-      console.log('Response:', response.data);
-      setSuccess('Sign up successful!');
-      setError('');
-    } catch (err) {
-      console.error('Error:', err);
-      setError('Sign up failed');
+      const response = await axios.post('/api/signup', { email, password });
+      localStorage.setItem('token', response.data.token);
+      navigate('/profile');
+    } catch (error) {
+      console.error('Error signing up:', error);
     }
   };
 
   return (
     <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="signup-form" onSubmit={handleSignUp}>
+        <h2 className="signup-title">Sign Up</h2>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label>Email:</label>
           <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="signup-input"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label>Password:</label>
           <input
             type="password"
-            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
+            className="signup-input"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p className="error">{error}</p>}
-        {success && <p className="success">{success}</p>}
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="signup-button">Sign Up</button>
       </form>
     </div>
   );
