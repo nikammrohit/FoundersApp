@@ -40,6 +40,7 @@ router.post('/signup', async (req, res) => {
       }
     );
   } catch (error) {
+    console.error('Server error:', error); // Log the error for debugging
     res.status(500).send('Server error');
   }
 });
