@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-//import Profile from './components/Profile';
+import UserProfile from './components/UserProfile';
 import './styles/App.css';
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/profile" component={<UserProfile/>} />
       </Routes>
     </Router>
   );
