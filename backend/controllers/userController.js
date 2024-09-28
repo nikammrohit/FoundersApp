@@ -1,7 +1,7 @@
 // backend/controllers/userController.js
 // Creates and fetches users
 // Import the User model
-const User = require('../models/userModel');
+const User = require('../models/User');
 
 // Controller function to create a new user
 exports.createUser = async (req, res) => {

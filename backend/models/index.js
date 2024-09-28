@@ -1,5 +1,5 @@
 // models/index.js
-const User = require('./userModel');
+const User = require('./User');
 // Add other models here as needed
 // const AnotherModel = require('./anotherModel');
 
