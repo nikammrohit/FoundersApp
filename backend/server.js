@@ -27,6 +27,26 @@ app.use('/api', userRoutes);
    console.error('Error connecting to MongoDB:', error);
  });
 
+ app.post('/api/signup', (req, res) => {
+  const { username, password } = req.body;
+  // Replace with your actual sign-up logic
+  if (username && password) {
+    res.json({ message: 'Sign up successful' });
+  } else {
+    res.status(400).json({ message: 'Sign up failed' });
+  }
+});
+
+ app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+  // Replace with your actual authentication logic
+  if (username === 'admin' && password === 'password') {
+    res.json({ message: 'Login successful', token: 'fake-jwt-token' });
+  } else {
+    res.status(401).json({ message: 'Invalid username or password' });
+  }
+});
+
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

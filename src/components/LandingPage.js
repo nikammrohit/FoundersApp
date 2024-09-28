@@ -15,7 +15,7 @@ const LandingPage = () => {
 			<section id="landing-page" className="landing-page">
 				<h1>Welcome to Founders</h1>
 				<p>Where Startup Journeys Meet.</p>
-				<button onClick={handleScroll} className="cta-button">View My Work</button>
+				<button onClick={handleScroll} className="cta-button">Start Your Journey</button>
 			</section>
 		</div>
 	);
