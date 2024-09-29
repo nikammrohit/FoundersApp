@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes'); // Import auth routes
+require('dotenv').config(); // Load environment variables
 
 const app = express();
 
@@ -12,14 +13,12 @@ app.use(bodyParser.json());
 
 app.use('/api', authRoutes); // Use auth routes
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB');
-}).catch((error) => {
-  console.error('Error connecting to MongoDB:', error);
-});
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  }).catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
